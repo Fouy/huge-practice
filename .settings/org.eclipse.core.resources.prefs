@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/main/java=GBK
+encoding//src/main/leetcode=GBK
+encoding//src/main/leetcode/AbstractGraph.java=GBK
+encoding//src/main/leetcode/AdjListGraph.java=GBK
+encoding//src/main/leetcode/Edge.java=GBK
+encoding//src/main/leetcode/GGraph.java=GBK
+encoding//src/main/leetcode/Vertex.java=GBK
+encoding//src/main/leetcode/com/way361/leetcode/candy=GBK
+encoding//src/main/leetcode/com/way361/leetcode/clonegraph=GBK
+encoding//src/main/structure=GBK
+encoding/<project>=UTF-8
