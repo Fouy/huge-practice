@@ -32,16 +32,14 @@ public class NettyOioServer {
 					.childHandler(new ChannelInitializer<Channel>() {
 						@Override
 						protected void initChannel(Channel ch) throws Exception {
-							// 添加一个“入站”handler到ChannelPipeline
-							ch.pipeline().addLast(
-									new ChannelInboundHandlerAdapter() {
-										@Override
-										public void channelActive(ChannelHandlerContext ctx)throws Exception {
-											// 连接后，写消息到客户端，写完后便关闭连接
-											ctx.writeAndFlush(buf.duplicate())
-													.addListener(ChannelFutureListener.CLOSE);
-										}
-									});
+							ch.pipeline().addLast(// 添加一个“入站”handler到ChannelPipeline
+								new ChannelInboundHandlerAdapter() {
+									@Override
+									public void channelActive(ChannelHandlerContext ctx)throws Exception {
+										ctx.writeAndFlush(buf.duplicate())// 连接后，写消息到客户端，写完后便关闭连接
+												.addListener(ChannelFutureListener.CLOSE);
+									}
+								});
 						}
 					});
 			// 绑定服务器接受连接

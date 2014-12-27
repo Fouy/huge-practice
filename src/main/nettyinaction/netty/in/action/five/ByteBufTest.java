@@ -139,6 +139,16 @@ public class ByteBufTest {
 		ByteBuf directBuf = Unpooled.directBuffer(16);
 	}
 	
+	@Test
+	public void testByteBuf7(){
+		Charset utf8 = Charset.forName("UTF-8");
+		ByteBuf buf = Unpooled.copiedBuffer("fuck you man.", utf8);
+		ByteBuf sliced = buf.slice(0, 8);
+		ByteBuf copy = buf.copy(0, 8);
+		System.out.println(buf.toString(utf8));
+		System.out.println(sliced.toString(utf8));
+		System.out.println(copy.toString(utf8));
+	}
 	
 	
 	
