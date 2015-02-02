@@ -21,6 +21,10 @@
 	<classpathentry kind="src" path="src/main/leetcode"/>
 	<classpathentry kind="src" path="src/main/jvm"/>
 	<classpathentry kind="src" path="src/main/nettyinaction"/>
+	<classpathentry kind="src" path="src/main/nio"/>
+	<classpathentry kind="src" path="src/main/search"/>
+	<classpathentry kind="src" path="src/main/interview"/>
+	<classpathentry kind="src" path="src/main/mongodb"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>

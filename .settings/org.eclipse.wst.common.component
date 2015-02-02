@@ -10,6 +10,10 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/leetcode"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/jvm"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/nettyinaction"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/nio"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/search"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/interview"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/mongodb"/>
         <property name="context-root" value="huge-practice"/>
         <property name="java-output-path" value="/huge-practice/target/classes"/>
     </wb-module>
