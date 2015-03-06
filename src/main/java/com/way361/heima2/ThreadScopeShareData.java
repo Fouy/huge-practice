@@ -4,6 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+/**
+ * 线程范围内的共享数据
+ * @author xuefeihu
+ *
+ */
 public class ThreadScopeShareData {
 
 	private static int data = 0;

@@ -1,5 +1,10 @@
 package com.way361.heima2;
 
+/**
+ * 线程同步互斥示例
+ * @author xuefeihu
+ *
+ */
 public class TraditionalThreadCommunication {
 
 	public static void main(String[] args) {
@@ -19,8 +24,13 @@ public class TraditionalThreadCommunication {
 	}
 }
 
+/**
+ * 业务处理类（分别打印主线程和子线程的业务）
+ * @author xuefeihu
+ *
+ */
 class Business {
-	private boolean bShouldSub = true;
+	private boolean bShouldSub = true;//是否该子线程执行
 
 	public synchronized void sub(int i) {
 		while (!bShouldSub) {

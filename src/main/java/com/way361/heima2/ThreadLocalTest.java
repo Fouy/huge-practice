@@ -4,10 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+/**
+ * ThreadLocal测试
+ * @author xuefeihu
+ *
+ */
 public class ThreadLocalTest {
 
-	private static ThreadLocal<Integer> x = new ThreadLocal<Integer>();
-	private static ThreadLocal<MyThreadScopeData> myThreadScopeData = new ThreadLocal<MyThreadScopeData>();
+//	private static ThreadLocal<Integer> x = new ThreadLocal<Integer>();
+//	private static ThreadLocal<MyThreadScopeData> myThreadScopeData = new ThreadLocal<MyThreadScopeData>();
 	public static void main(String[] args) {
 		for(int i=0;i<2;i++){
 			new Thread(new Runnable(){
@@ -16,25 +21,30 @@ public class ThreadLocalTest {
 					int data = new Random().nextInt();
 					System.out.println(Thread.currentThread().getName() 
 							+ " has put data :" + data);
-					x.set(data);
+//					x.set(data);
 /*					MyThreadScopeData myData = new MyThreadScopeData();
 					myData.setName("name" + data);
 					myData.setAge(data);
 					myThreadScopeData.set(myData);*/
 					MyThreadScopeData.getThreadInstance().setName("name" + data);
 					MyThreadScopeData.getThreadInstance().setAge(data);
-					new A().get();
-					new B().get();
+					new A().get();//在模块A中获取线程相关的数据
+					new B().get();//在模块B中获取线程相关的数据
 				}
 			}).start();
 		}
 	}
 	
+	/**
+	 * 程序模块A
+	 * @author xuefeihu
+	 *
+	 */
 	static class A{
 		public void get(){
-			int data = x.get();
-			System.out.println("A from " + Thread.currentThread().getName() 
-					+ " get data :" + data);
+//			int data = x.get();
+//			System.out.println("A from " + Thread.currentThread().getName() 
+//					+ " get data :" + data);
 /*			MyThreadScopeData myData = myThreadScopeData.get();;
 			System.out.println("A from " + Thread.currentThread().getName() 
 					+ " getMyData: " + myData.getName() + "," +
@@ -46,11 +56,16 @@ public class ThreadLocalTest {
 		}
 	}
 	
+	/**
+	 * 程序模块B
+	 * @author xuefeihu
+	 *
+	 */
 	static class B{
 		public void get(){
-			int data = x.get();			
-			System.out.println("B from " + Thread.currentThread().getName() 
-					+ " get data :" + data);
+//			int data = x.get();			
+//			System.out.println("B from " + Thread.currentThread().getName() 
+//					+ " get data :" + data);
 			MyThreadScopeData myData = MyThreadScopeData.getThreadInstance();
 			System.out.println("B from " + Thread.currentThread().getName() 
 					+ " getMyData: " + myData.getName() + "," +
@@ -59,6 +74,11 @@ public class ThreadLocalTest {
 	}
 }
 
+/**
+ * 线程相关的数据（单例模式）
+ * @author xuefeihu
+ *
+ */
 class MyThreadScopeData{
 	private MyThreadScopeData(){}
 	public static /*synchronized*/ MyThreadScopeData getThreadInstance(){
