@@ -3,18 +3,18 @@ package com.way361.leetcode.trappingrainwater;
  * LeetCode | Trapping Rain Water
  * @author xuefeihu
  * 
- * ÌâÄ¿£º
+ * é¢˜ç›®ï¼š
      Given n non-negative integers representing an elevation map where the 
    width of each bar is 1, compute how much water it is able to trap after raining.
 	 For example, Given [0,1,0,2,1,0,1,3,2,1,2,1], return 6.
 	| 
     |
-	|   (½«Êı×éÖĞµÄÖµ×ª»¯³ÉÖ±·½Í¼£¬Ëã¿ÉÒÔ·ÅµÄË®Á¿)
+	|   (å°†æ•°ç»„ä¸­çš„å€¼è½¬åŒ–æˆç›´æ–¹å›¾ï¼Œç®—å¯ä»¥æ”¾çš„æ°´é‡)
 	|--|--|--|--|--|--|--|--|--|--|----------------------------
       The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this 
    case, 6 units of rain water (blue section) are being trapped.Thanks Marcos for contributing this image!
-   Ë¼Â·:
-         ÔÚÔ­ÏÈÊı×éµÄ»ù´¡ÉÏ£¬´´½¨Ò»¸ö¶şÎ¬µÄÊı×é£¬Ô­ÏÈµÄÊı×éÈ«²¿·Ö½âÎª1µÄµ¥Î»£¬´Ó¶ø¿ÉÒÔµÃµ½Ò»¸ö  n * mostHigh µÄ¾ØÕó£¬È»ºó±éÀú¼´¿É¡££¨Ğ§ÂÊ²»¸ß£© 
+   æ€è·¯:
+         åœ¨åŸå…ˆæ•°ç»„çš„åŸºç¡€ä¸Šï¼Œåˆ›å»ºä¸€ä¸ªäºŒç»´çš„æ•°ç»„ï¼ŒåŸå…ˆçš„æ•°ç»„å…¨éƒ¨åˆ†è§£ä¸º1çš„å•ä½ï¼Œä»è€Œå¯ä»¥å¾—åˆ°ä¸€ä¸ª  n * mostHigh çš„çŸ©é˜µï¼Œç„¶åéå†å³å¯ã€‚ï¼ˆæ•ˆç‡ä¸é«˜ï¼‰ 
  */
 public class TrappingRainWater2 {
 	
@@ -25,8 +25,8 @@ public class TrappingRainWater2 {
 	}
 	
 	/**
-	 * ¼ÆÁ¿rainsµÄÈİÁ¿
-	 * @param rains Êı×é
+	 * è®¡é‡rainsçš„å®¹é‡
+	 * @param rains æ•°ç»„
 	 * @return
 	 */
 	public static int trap(int rains[]) {
@@ -35,14 +35,14 @@ public class TrappingRainWater2 {
 			return 0;
 		int n = rains.length;
 
-		// ÕÒµ½×î´óÖµ
+		// æ‰¾åˆ°æœ€å¤§å€¼
 		int highest = rains[0];
 		for (int i = 1; i < n; i++) {
 			if (rains[i] > highest)
 				highest = rains[i];
 		}
 		
-		//¹¹½¨º¬1µÄ¾ØÕó
+		//æ„å»ºå«1çš„çŸ©é˜µ
 		int[][] matrix = new int[n][highest];
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < rains[i]; j++) {
@@ -50,7 +50,7 @@ public class TrappingRainWater2 {
 			}
 		}
 		
-		//±éÀú»ñÈ¡ÈİÁ¿
+		//éå†è·å–å®¹é‡
 		int water = 0;
 		for(int i = 0; i < highest; i++){
 			int left = 0;

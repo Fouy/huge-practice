@@ -6,14 +6,14 @@ import java.util.HashMap;
  * LeetCode | Copy List with Random Pointer
  * @author xuefeihu
  *
- * ÌâÄ¿£º
+ * é¢˜ç›®ï¼š
    		A linked list is given such that each node contains an additional 
    		random pointer which could point to any node in the list or null.
  *		Return a deep copy of the list.
- * Ë¼Â·£º
- * 		·½·¨1£º½«ĞÂ´´½¨µÄ½ÚµãÆ´½Óµ½Ô­ÏÈlistÖĞ£¬½«randomÉèÖÃÍê³ÉÖ®ºó£¬ÔÙ½«Á´±í²ğ·ÖÎªÁ½Ìõ¡£
- *		·½·¨2£ºÏÈÉî¶È¿½±´Á´±í½áµã£¬´ËÊ±½«ĞÂ¾ÉÁ´±í½Úµã´æÈëÒ»¸öHashMap<RandomListNode, RandomListNode>
- *			ÖĞ£¬ÏÂÒ»´Î¿½±´randomµÄÊ±ºòÖ±½Ó´ÓmapÖĞÈ¡µÃĞÂ´´½¨µÄÁ´±í½áµã¼´¿É¡£
+ * æ€è·¯ï¼š
+ * 		æ–¹æ³•1ï¼šå°†æ–°åˆ›å»ºçš„èŠ‚ç‚¹æ‹¼æ¥åˆ°åŸå…ˆlistä¸­ï¼Œå°†randomè®¾ç½®å®Œæˆä¹‹åï¼Œå†å°†é“¾è¡¨æ‹†åˆ†ä¸ºä¸¤æ¡ã€‚
+ *		æ–¹æ³•2ï¼šå…ˆæ·±åº¦æ‹·è´é“¾è¡¨ç»“ç‚¹ï¼Œæ­¤æ—¶å°†æ–°æ—§é“¾è¡¨èŠ‚ç‚¹å­˜å…¥ä¸€ä¸ªHashMap<RandomListNode, RandomListNode>
+ *			ä¸­ï¼Œä¸‹ä¸€æ¬¡æ‹·è´randomçš„æ—¶å€™ç›´æ¥ä»mapä¸­å–å¾—æ–°åˆ›å»ºçš„é“¾è¡¨ç»“ç‚¹å³å¯ã€‚
  */
 public class CopyListwithRandomPointer {
 	
@@ -23,10 +23,10 @@ public class CopyListwithRandomPointer {
 		System.out.println(copy);
 	}
 	
-	/** ·½·¨1
-	 * Éî¶È¿½±´Á´±í
-	 * @param head Í·Ö¸Õë
-	 * @return ĞÂÁ´±í
+	/** æ–¹æ³•1
+	 * æ·±åº¦æ‹·è´é“¾è¡¨
+	 * @param head å¤´æŒ‡é’ˆ
+	 * @return æ–°é“¾è¡¨
 	 */
 	public static RandomListNode copyRandomList1(RandomListNode head) {
 		if (head == null)
@@ -63,10 +63,10 @@ public class CopyListwithRandomPointer {
 		return newHead;
 	}
 	
-	/** ·½·¨2
-	 * Éî¶È¿½±´Á´±í
-	 * @param head Í·Ö¸Õë
-	 * @return ĞÂÁ´±í
+	/** æ–¹æ³•2
+	 * æ·±åº¦æ‹·è´é“¾è¡¨
+	 * @param head å¤´æŒ‡é’ˆ
+	 * @return æ–°é“¾è¡¨
 	 */
 	public RandomListNode copyRandomList2(RandomListNode head) {
 		if (head == null)
@@ -105,7 +105,7 @@ public class CopyListwithRandomPointer {
 	}
 	
 	/**
-	 * ³õÊ¼»¯Á´±í
+	 * åˆå§‹åŒ–é“¾è¡¨
 	 * @return
 	 */
 	public static RandomListNode createNewList(){
@@ -139,7 +139,7 @@ public class CopyListwithRandomPointer {
 }
 
 /**
- * Á´±í½Úµã
+ * é“¾è¡¨èŠ‚ç‚¹
  */
 class RandomListNode {
 	public int label;

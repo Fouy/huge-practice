@@ -6,7 +6,7 @@ import java.util.Queue;
 public class SurroundedRegions2 {
 	int m, n;
 	char[][] board;
-	/** ±£´æ¹ã¶È±éÀúÎ»ÖÃ */
+	/** ä¿å­˜å¹¿åº¦éå†ä½ç½® */
 	Queue<Integer> queue = new LinkedList<Integer>();
 
 	public static void main(String[] args) {
@@ -50,7 +50,7 @@ public class SurroundedRegions2 {
 	}
 	
 	/**
-	 * ¹ã¶ÈÓÅÏÈ±éÀú
+	 * å¹¿åº¦ä¼˜å…ˆéå†
 	 * @param x
 	 * @param y
 	 */
@@ -70,7 +70,7 @@ public class SurroundedRegions2 {
 	}
 	
 	/**
-	 * ½«¸ÃÎ»ÖÃµÄO¸ÄÎªD£¬²¢ÇÒ±êÊ¶¸ÃÎ»ÖÃ£¬ÒÔ¹©¹ã¶È±éÀú
+	 * å°†è¯¥ä½ç½®çš„Oæ”¹ä¸ºDï¼Œå¹¶ä¸”æ ‡è¯†è¯¥ä½ç½®ï¼Œä»¥ä¾›å¹¿åº¦éå†
 	 * @param x
 	 * @param y
 	 */
@@ -82,7 +82,7 @@ public class SurroundedRegions2 {
 	}
 	
 	/**
-	 * ´òÓ¡
+	 * æ‰“å°
 	 * @param board
 	 */
 	private static void printBoard(char[][] board) {

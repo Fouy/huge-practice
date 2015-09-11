@@ -14,10 +14,10 @@ public class CombinationSumTwo {
 	}
 
 	/**
-	 * ´ÓÊı×éÖĞ»ñÈ¡×é³ÉÄ¿±êµÄÊıÖµ¼¯ºÏ
-	 * @param numbers ¼¯ºÏÊı×é
-	 * @param target Ä¿±êÊıÖµ
-	 * @return ½á¹û
+	 * ä»æ•°ç»„ä¸­è·å–ç»„æˆç›®æ ‡çš„æ•°å€¼é›†åˆ
+	 * @param numbers é›†åˆæ•°ç»„
+	 * @param target ç›®æ ‡æ•°å€¼
+	 * @return ç»“æœ
 	 */
 	public static ArrayList<ArrayList<Integer>> combinationSum2(int[] numbers, int target) {
 		
@@ -32,28 +32,28 @@ public class CombinationSumTwo {
 	}
 
 	/**
-	 * µİ¹é²éÕÒºÏÊÊµÄÊı
-	 * @param numbers ¼¯ºÏÊı×é
-	 * @param start ¿ªÊ¼²éÕÒË÷Òı
-	 * @param target ²éÕÒÄ¿±êÊıÖµ
-	 * @param item Ä¿Ç°ÒÑÕÒµ½µÄÏî
-	 * @param result ½á¹û
+	 * é€’å½’æŸ¥æ‰¾åˆé€‚çš„æ•°
+	 * @param numbers é›†åˆæ•°ç»„
+	 * @param start å¼€å§‹æŸ¥æ‰¾ç´¢å¼•
+	 * @param target æŸ¥æ‰¾ç›®æ ‡æ•°å€¼
+	 * @param item ç›®å‰å·²æ‰¾åˆ°çš„é¡¹
+	 * @param result ç»“æœ
 	 */
 	private static void helper(int[] numbers, int start, int target, ArrayList<Integer> item, ArrayList<ArrayList<Integer>> result) {
 		
-		if (target == 0) {//²éÕÒÄ¿±êÎªÁãÊ±£¬²éÕÒ½áÊø
+		if (target == 0) {//æŸ¥æ‰¾ç›®æ ‡ä¸ºé›¶æ—¶ï¼ŒæŸ¥æ‰¾ç»“æŸ
 			result.add(new ArrayList<Integer>(item));
 			return;
 		}
-		if (target < 0 || start >= numbers.length)//²éÕÒÄ¿±êĞ¡ÓÚ0£¬²éÕÒË÷Òı³ö½çÊ±£¬»ØËİ
+		if (target < 0 || start >= numbers.length)//æŸ¥æ‰¾ç›®æ ‡å°äº0ï¼ŒæŸ¥æ‰¾ç´¢å¼•å‡ºç•Œæ—¶ï¼Œå›æº¯
 			return;
 		
 		for (int i = start; i < numbers.length; i++) {
-			if (i > start && numbers[i] == numbers[i - 1])//»¹Î´Ã÷°×ÒâË¼
+			if (i > start && numbers[i] == numbers[i - 1])//è¿˜æœªæ˜ç™½æ„æ€
 				continue;
 			item.add(numbers[i]);
 			helper(numbers, i + 1, target - numbers[i], item, result);
-			item.remove(item.size() - 1);//»ØËİ£¬ÒÆ³ıÉÏÒ»´ÎÌí¼ÓµÄÊı¾İ
+			item.remove(item.size() - 1);//å›æº¯ï¼Œç§»é™¤ä¸Šä¸€æ¬¡æ·»åŠ çš„æ•°æ®
 		}
 		
 	}

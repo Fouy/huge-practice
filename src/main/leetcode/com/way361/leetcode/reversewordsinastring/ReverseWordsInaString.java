@@ -6,16 +6,16 @@ import java.util.Stack;
  * LeetCode | Reverse Words in a String
  * @author xuefeihu 
  * 
- * TOPIC£º Given an input string, reverse the string word by word. 
+ * TOPICï¼š Given an input string, reverse the string word by word. 
  * For example, Given s = "the sky is blue", return "blue is sky the".
- * Ë¼Â·£º
-	·½·¨1£ºÊ×ÏÈ°Ñ¾ä×Ó¿´×öÓÉ´Ê×é³ÉµÄ£¬ÀıÈç¡°A B C¡±£¬Òò´Ë¿ÉÒÔ½«¾ä×ÓµÄËùÓĞ×Ö·ûÇ°ºó½»»»£¬µÃµ½¡°C' B' A'"¡£
-	ÏÔÈ»X¡®±íÊ¾ÄæĞòµÄ´ÊX£¬ËùÒÔµÚ¶ş²½ÊÇ½«Ã¿¸ö´ÊÖĞµÄ×Ö·û´®Ç°ºó½»»»¡£Õû¸ö¹ı³ÌµÄÊ±¼ä¸´ÔÓ¶ÈÎªO(n)£¬¿Õ¼ä¸´ÔÓ¶È
-	ÎªO(1)¡£ÕâÖÖ·½·¨µÄÈ±µãÊÇÃ»ÓĞ¿¼ÂÇĞí¶àÌØÊâÇé¿ö£¬ÀıÈç×Ö·û´®ÖĞÓĞÁ¬ĞøµÄ¿Õ¸ñ£¬×Ö·û´®¿ªÊ¼½áÎ²´¦ÓĞ¿Õ¸ñµÈ¡£
+ * æ€è·¯ï¼š
+	æ–¹æ³•1ï¼šé¦–å…ˆæŠŠå¥å­çœ‹åšç”±è¯ç»„æˆçš„ï¼Œä¾‹å¦‚â€œA B Câ€ï¼Œå› æ­¤å¯ä»¥å°†å¥å­çš„æ‰€æœ‰å­—ç¬¦å‰åäº¤æ¢ï¼Œå¾—åˆ°â€œC' B' A'"ã€‚
+	æ˜¾ç„¶Xâ€˜è¡¨ç¤ºé€†åºçš„è¯Xï¼Œæ‰€ä»¥ç¬¬äºŒæ­¥æ˜¯å°†æ¯ä¸ªè¯ä¸­çš„å­—ç¬¦ä¸²å‰åäº¤æ¢ã€‚æ•´ä¸ªè¿‡ç¨‹çš„æ—¶é—´å¤æ‚åº¦ä¸ºO(n)ï¼Œç©ºé—´å¤æ‚åº¦
+	ä¸ºO(1)ã€‚è¿™ç§æ–¹æ³•çš„ç¼ºç‚¹æ˜¯æ²¡æœ‰è€ƒè™‘è®¸å¤šç‰¹æ®Šæƒ…å†µï¼Œä¾‹å¦‚å­—ç¬¦ä¸²ä¸­æœ‰è¿ç»­çš„ç©ºæ ¼ï¼Œå­—ç¬¦ä¸²å¼€å§‹ç»“å°¾å¤„æœ‰ç©ºæ ¼ç­‰ã€‚
 
-	·½·¨2£ºÀûÓÃÁ½¸östack£¬Ò»¸ö±íÊ¾µ¥´Ê£¬Ò»¸ö±íÊ¾¾ä×Ó¡£µ±Óöµ½·Ç¿Õ¸ñ×Ö·ûÊ±·ÅÈëµ¥´Êstack£»µ±Óöµ½¿Õ¸ñÊ±½«µ¥
-	´ÊstackÖĞµÄ×Ö·ûÑ¹Èë¾ä×ÓstackÖĞ£¨×¢Òâ£ºµ¥´Ê´ËÊ±ÒÑ¾­ÄæĞòÒ»´Î£©£¬È»ºó½öÌí¼ÓÒ»¸ö¿Õ¸ñ¡£×îºó½«¾ä×Óstack
-	ÒÀ´ÎÊä³ö£¬´ËÊ±¾ä×ÓÄæĞò¡£Á½´ÎÄæĞòµÄµÀÀíÍ¬·½·¨1.
+	æ–¹æ³•2ï¼šåˆ©ç”¨ä¸¤ä¸ªstackï¼Œä¸€ä¸ªè¡¨ç¤ºå•è¯ï¼Œä¸€ä¸ªè¡¨ç¤ºå¥å­ã€‚å½“é‡åˆ°éç©ºæ ¼å­—ç¬¦æ—¶æ”¾å…¥å•è¯stackï¼›å½“é‡åˆ°ç©ºæ ¼æ—¶å°†å•
+	è¯stackä¸­çš„å­—ç¬¦å‹å…¥å¥å­stackä¸­ï¼ˆæ³¨æ„ï¼šå•è¯æ­¤æ—¶å·²ç»é€†åºä¸€æ¬¡ï¼‰ï¼Œç„¶åä»…æ·»åŠ ä¸€ä¸ªç©ºæ ¼ã€‚æœ€åå°†å¥å­stack
+	ä¾æ¬¡è¾“å‡ºï¼Œæ­¤æ—¶å¥å­é€†åºã€‚ä¸¤æ¬¡é€†åºçš„é“ç†åŒæ–¹æ³•1.
  */
 
 public class ReverseWordsInaString {
@@ -25,14 +25,14 @@ public class ReverseWordsInaString {
 	}
 
 	/**
-	 * ·´×ª×Ö·û´®
-	 * @param str ´ı·´×ªµÄ×Ö·û´®
+	 * åè½¬å­—ç¬¦ä¸²
+	 * @param str å¾…åè½¬çš„å­—ç¬¦ä¸²
 	 */
 	void reverseWords(char[] str) {
 		int begin = 0;
 		int end = 0;
 		System.out.println("before reverse : " + String.valueOf(str));
-		//·´×ªËùÓĞµÄµ¥´Ê
+		//åè½¬æ‰€æœ‰çš„å•è¯
 		while (end < str.length) {
 			if (str[end] == ' ') {
 				swapString(str, begin, end - 1);
@@ -43,17 +43,17 @@ public class ReverseWordsInaString {
 			}
 		}
 		swapString(str, begin, end - 1);
-		//½«Õû¸öĞòÁĞ·´×ª
+		//å°†æ•´ä¸ªåºåˆ—åè½¬
 		swapString(str, 0, str.length - 1);
 
 		System.out.println("after reverse : " + String.valueOf(str));
 	}
 
 	/**
-	 * ½«×Ö·ûÖĞµÄbeginÎ»ÖÃºÍendÖ®¼äµÄ×Ö·ûĞòÁĞ·´×ª
-	 * @param str ×Ö·ûĞòÁĞ
-	 * @param begin ¿ªÊ¼Î»ÖÃ
-	 * @param end ½áÊøÎ»ÖÃ
+	 * å°†å­—ç¬¦ä¸­çš„beginä½ç½®å’Œendä¹‹é—´çš„å­—ç¬¦åºåˆ—åè½¬
+	 * @param str å­—ç¬¦åºåˆ—
+	 * @param begin å¼€å§‹ä½ç½®
+	 * @param end ç»“æŸä½ç½®
 	 */
 	void swapString(char[] str, int begin, int end) {
 		while (end > begin) {
@@ -67,7 +67,7 @@ public class ReverseWordsInaString {
 }
 
 /**
- * ·½·¨2
+ * æ–¹æ³•2
  * @author xuefeihu
  *
  */

@@ -12,7 +12,7 @@ public class SubstringwithConcatenationofAllWords3 {
 		String[] strArray = { "foo", "bar" };
 		List<Integer> list = findSubstring(string, strArray);
 		System.out.println(list);
-	}
+	} 
 
 	public static ArrayList<Integer> findSubstring(String string, String[] strArray) {
 		// Note: The Solution object is instantiated only once and is reused by each test case.

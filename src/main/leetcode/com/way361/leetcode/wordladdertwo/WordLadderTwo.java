@@ -45,7 +45,7 @@ public class WordLadderTwo {
 					}
 					strCharArr[i] = ch;
 					String newWord = new String(strCharArr);
-					if (newWord.equals(end) == true) {//如果等于end
+					if (newWord.equals(end) == true) {//濡傛灉绛変簬end
 						path = node.path;
 						path.add(newWord);
 						if (min_length == -1) {
@@ -59,7 +59,7 @@ public class WordLadderTwo {
 							continue;
 						}
 					} else {
-						if (dict.contains(newWord) && !node.hash.contains(newWord)) {//添加未遍历的节点
+						if (dict.contains(newWord) && !node.hash.contains(newWord)) {//娣诲姞鏈亶鍘嗙殑鑺傜偣
 							path = new ArrayList<String>(node.path);
 							hash = new HashSet<String>(node.hash);
 							path.add(newWord);
@@ -157,11 +157,11 @@ public class WordLadderTwo {
 }
 
 class Pair {
-	/** 记录当前遍历到的节点字符 */
+	/** 璁板綍褰撳墠閬嶅巻鍒扮殑鑺傜偣瀛楃 */
 	String str;
-	/** 遍历到当前节点的路径 */
+	/** 閬嶅巻鍒板綋鍓嶈妭鐐圭殑璺緞 */
 	ArrayList<String> path;
-	/** 存放已遍历的节点 */
+	/** 瀛樻斁宸查亶鍘嗙殑鑺傜偣 */
 	HashSet<String> hash;
 	
 	Pair(String str, ArrayList<String> path, HashSet<String> hash) {

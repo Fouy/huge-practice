@@ -276,12 +276,11 @@ public class MappingMongoConverter extends AbstractMongoConverter implements App
 
 				DBRef dbref = value instanceof DBRef ? (DBRef) value : null;
 
-				DbRefProxyHandler handler = new DefaultDbRefProxyHandler(spELContext, mappingContext,
-						MappingMongoConverter.this);
-				DbRefResolverCallback callback = new DefaultDbRefResolverCallback(dbo, currentPath, evaluator,
-						MappingMongoConverter.this);
-
-				wrapper.setProperty(property, dbRefResolver.resolveDbRef(property, dbref, callback, handler));
+//				DbRefProxyHandler handler = new DefaultDbRefProxyHandler(spELContext, mappingContext,
+//						MappingMongoConverter.this);
+//				DbRefResolverCallback callback = new DefaultDbRefResolverCallback(dbo, currentPath, evaluator,
+//						MappingMongoConverter.this);
+//				wrapper.setProperty(property, dbRefResolver.resolveDbRef(property, dbref, callback, handler));
 			}
 		});
 
@@ -839,7 +838,6 @@ public class MappingMongoConverter extends AbstractMongoConverter implements App
 	 * (non-Javadoc)
 	 * @see org.springframework.data.mongodb.core.convert.ValueResolver#getValueInternal(org.springframework.data.mongodb.core.mapping.MongoPersistentProperty, com.mongodb.DBObject, org.springframework.data.mapping.model.SpELExpressionEvaluator, java.lang.Object)
 	 */
-	@Override
 	public Object getValueInternal(MongoPersistentProperty prop, DBObject dbo, SpELExpressionEvaluator evaluator,
 			ObjectPath path) {
 		return new MongoDbPropertyValueProvider(dbo, evaluator, path).getPropertyValue(prop);

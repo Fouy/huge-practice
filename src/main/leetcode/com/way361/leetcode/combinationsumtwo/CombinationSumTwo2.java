@@ -22,7 +22,7 @@ public class CombinationSumTwo2 {
 			return result;
 		}
 		int[] newNum = Arrays.copyOf(num, length + 1);
-		// ÒÔÉÏÖ»ÊÇ×öÁËÒ»¸ö¼ò´ğµÄÔ¤´¦Àí£¬ÍêÈ«¿ÉÒÔ²»Ğ´£¬¶Ô¸´ÔÓ¶ÈÒ²ÎŞÓ°Ïì
+		// ä»¥ä¸Šåªæ˜¯åšäº†ä¸€ä¸ªç®€ç­”çš„é¢„å¤„ç†ï¼Œå®Œå…¨å¯ä»¥ä¸å†™ï¼Œå¯¹å¤æ‚åº¦ä¹Ÿæ— å½±å“
 		for (int i = 0; i < newNum.length; i++) {
 			dfs(new ArrayList<Integer>(), newNum, i, target);
 			for (int j = i + 1; j < newNum.length && newNum[j] == newNum[i]; j++, i++)

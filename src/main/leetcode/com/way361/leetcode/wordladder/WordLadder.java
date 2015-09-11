@@ -17,7 +17,7 @@ public class WordLadder {
 	}
 
 	/**
-	 * ¼ÆËã×ÖÌÝ³¤¶È
+	 * è®¡ç®—å­—æ¢¯é•¿åº¦
 	 * @param start
 	 * @param end
 	 * @param dict

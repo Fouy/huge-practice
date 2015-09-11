@@ -2,17 +2,17 @@ package com.way361.leetcode.longestvalidparentheses;
 /**
  * LeetCode | Longest Valid Parentheses
  * @author xuefeihu<br>
- * ÌâÄ¿£º<br>
+ * é¢˜ç›®ï¼š<br>
 		Given a string containing just the characters '(' and ')', find the length of the longest 
 	valid (well-formed) parentheses substring.<br>
  		For "(()", the longest valid parentheses substring is "()", which has length = 2.<br>
 		Another example is ")()())", where the longest valid parentheses substring is "()()", which has length = 4.<br>
 		
-	·½°¸1£ºDP£¬dp[i]´ú±í´ÓË÷Òıiµ½Ä©Î²×î³¤µÄÓĞĞ§À¨ºÅ×éºÏµÄ³¤¶È¡£<br>
-		dp[s.length()-1]=0;´ÓºóÏòÇ°ÄæÏòÇó½âdp[i]£¬<br>
-		1¡¢Èç¹ûs[i]=')'£¬ÔòÏÔÈ»dp[i]=0;<br>
-		2¡¢Èç¹ûs[i]='('£¬Ìø¹ıdp[i+1]Õâ¶Î³¤¶È´Ój=i+1+dp[i+1]¿ªÊ¼£¬Èç¹ûjÃ»Ô½½ç²¢ÇÒs[j]='0'£¬ÕıºÃºÍs[i]Æ¥Åä£¬Ôòdp[i]=dp[i+1]+2£»<br>
-		ÁíÍâ´ËÊ±¿ÉÄÜjÖ®ºóµÄÒ²¿ÉÒÔÁ¬ÉÏ£¬ËùÒÔ£¬¿ÉÄÜÒª¼ÓÉÏdp[j+1];<br>
+	æ–¹æ¡ˆ1ï¼šDPï¼Œdp[i]ä»£è¡¨ä»ç´¢å¼•iåˆ°æœ«å°¾æœ€é•¿çš„æœ‰æ•ˆæ‹¬å·ç»„åˆçš„é•¿åº¦ã€‚<br>
+		dp[s.length()-1]=0;ä»åå‘å‰é€†å‘æ±‚è§£dp[i]ï¼Œ<br>
+		1ã€å¦‚æœs[i]=')'ï¼Œåˆ™æ˜¾ç„¶dp[i]=0;<br>
+		2ã€å¦‚æœs[i]='('ï¼Œè·³è¿‡dp[i+1]è¿™æ®µé•¿åº¦ä»j=i+1+dp[i+1]å¼€å§‹ï¼Œå¦‚æœjæ²¡è¶Šç•Œå¹¶ä¸”s[j]='0'ï¼Œæ­£å¥½å’Œs[i]åŒ¹é…ï¼Œåˆ™dp[i]=dp[i+1]+2ï¼›<br>
+		å¦å¤–æ­¤æ—¶å¯èƒ½jä¹‹åçš„ä¹Ÿå¯ä»¥è¿ä¸Šï¼Œæ‰€ä»¥ï¼Œå¯èƒ½è¦åŠ ä¸Šdp[j+1];<br>
  */
 public class LongestValidParentheses {
 	

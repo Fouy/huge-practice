@@ -4,14 +4,14 @@ package com.way361.leetcode.surroundedregions;
  * LeetCode | Surrounded Regions
  * @author xuefeihu
  * 
- * ÌâÄ¿£º
+ * é¢˜ç›®ï¼š
 	Given a 2D board containing 'X' and 'O', capture all regions surrounded by 'X'.
 	A region is captured by flipping all 'O's into 'X's in that surrounded region .
- *Ë¼Â·£º
-	Ò»¿ªÊ¼ÎÒ³¢ÊÔ´ÓÍâÏòÀïÒ»²ãÒ»²ãµÄµİÍÆ£¬µ«ÊÇ¸Ğ¾õ´úÂë±È½ÏÓ·Ö×¡£ËùÒÔºóÀ´Ñ¡ÔñÁËBFSµÄËã·¨£¬¼´´Ó×îÍâÒ»È¦ÕÒµ½×Ö·ûÎª
-	OµÄÈë¿Ú£¬ÏòÄÚ×öBFS¡£ÎªÁË²»ÖØ¸´±éÀúÏàÍ¬µÄµ¥Ôª¸ñ£¬ÎÒ¹¹ÔìÁËÒ»¸ö¾ØÕóÀ´±£´æÃ¿¸öµ¥Ôª¸ñ·ÃÎÊµÄ×´Ì¬¡£
-  ·½·¨1£ºDFS{com.way361.SurroundedRegions}
-  ·½·¨2£ºBFS{com.way361.SurroundedRegions2}
+ *æ€è·¯ï¼š
+	ä¸€å¼€å§‹æˆ‘å°è¯•ä»å¤–å‘é‡Œä¸€å±‚ä¸€å±‚çš„é€’æ¨ï¼Œä½†æ˜¯æ„Ÿè§‰ä»£ç æ¯”è¾ƒè‡ƒè‚¿ã€‚æ‰€ä»¥åæ¥é€‰æ‹©äº†BFSçš„ç®—æ³•ï¼Œå³ä»æœ€å¤–ä¸€åœˆæ‰¾åˆ°å­—ç¬¦ä¸º
+	Oçš„å…¥å£ï¼Œå‘å†…åšBFSã€‚ä¸ºäº†ä¸é‡å¤éå†ç›¸åŒçš„å•å…ƒæ ¼ï¼Œæˆ‘æ„é€ äº†ä¸€ä¸ªçŸ©é˜µæ¥ä¿å­˜æ¯ä¸ªå•å…ƒæ ¼è®¿é—®çš„çŠ¶æ€ã€‚
+  æ–¹æ³•1ï¼šDFS{com.way361.SurroundedRegions}
+  æ–¹æ³•2ï¼šBFS{com.way361.SurroundedRegions2}
  */
 public class SurroundedRegions {
 
@@ -33,7 +33,7 @@ public class SurroundedRegions {
 	}
 
 	/**
-	 * ×ª»»¾ØÕó
+	 * è½¬æ¢çŸ©é˜µ
 	 * @param board
 	 */
 	public void solve(char[][] board) {
@@ -67,7 +67,7 @@ public class SurroundedRegions {
 	}
 
 	/**
-	 * Éî¶ÈÓÅÏÈ±éÀú
+	 * æ·±åº¦ä¼˜å…ˆéå†
 	 * @param x
 	 * @param y
 	 */
@@ -82,7 +82,7 @@ public class SurroundedRegions {
 	}
 	
 	/**
-	 * ´òÓ¡
+	 * æ‰“å°
 	 * @param board
 	 */
 	private static void printBoard(char[][] board) {

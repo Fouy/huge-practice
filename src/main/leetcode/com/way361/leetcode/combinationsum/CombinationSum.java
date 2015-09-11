@@ -8,14 +8,14 @@ import java.util.List;
  * LeetCode | Combination Sum
  * @author xuefeihu<br>
  *
- *	ÌâÄ¿£º<br>
+ *	é¢˜ç›®ï¼š<br>
 		Given a set of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
 	The same repeated number may be chosen from C unlimited number of times.<br>
 
 	Note:
 		<ul>
 		<li>All numbers (including target) will be positive integers.</li>
-		<li>Elements in a combination (a1, a2, ¡­ , ak) must be in non-descending order. (ie, a1 ¡Ü a2 ¡Ü ¡­ ¡Ü ak).</li>
+		<li>Elements in a combination (a1, a2, â€¦ , ak) must be in non-descending order. (ie, a1 â‰¤ a2 â‰¤ â€¦ â‰¤ ak).</li>
 		<li>The solution set must not contain duplicate combinations.</li>
 		</ul>
 	For example, given candidate set 2,3,6,7 and target 7, 
@@ -25,9 +25,9 @@ import java.util.List;
 		[2, 2, 3] 
 		</pre>
 	
-	Ë¼Â·£º
-		Õâ¸öÌâÊÇÒ»¸öNPÎÊÌâ£¬·½·¨ÈÔÈ»ÊÇN-QueensÖĞ½éÉÜµÄÌ×Â·¡£»ù±¾Ë¼Â·ÊÇÏÈÅÅºÃĞò£¬È»ºóÃ¿´Îµİ¹éÖĞ°ÑÊ£ÏÂµÄÔªËØÒ»Ò»¼Óµ½½á¹û¼¯ºÏÖĞ£¬²¢ÇÒ°ÑÄ¿±ê¼õÈ¥¼ÓÈëµÄÔªËØ£¬È»ºó°ÑÊ£ÏÂÔªËØ£¨°üÀ¨µ±Ç°¼ÓÈëµÄÔªËØ£©
-		·Åµ½ÏÂÒ»²ãµİ¹éÖĞ½â¾ö×ÓÎÊÌâ¡£Ëã·¨¸´ÔÓ¶ÈÒòÎªÊÇNPÎÊÌâ£¬ËùÒÔ×ÔÈ»ÊÇÖ¸ÊıÁ¿¼¶µÄ¡£
+	æ€è·¯ï¼š
+		è¿™ä¸ªé¢˜æ˜¯ä¸€ä¸ªNPé—®é¢˜ï¼Œæ–¹æ³•ä»ç„¶æ˜¯N-Queensä¸­ä»‹ç»çš„å¥—è·¯ã€‚åŸºæœ¬æ€è·¯æ˜¯å…ˆæ’å¥½åºï¼Œç„¶åæ¯æ¬¡é€’å½’ä¸­æŠŠå‰©ä¸‹çš„å…ƒç´ ä¸€ä¸€åŠ åˆ°ç»“æœé›†åˆä¸­ï¼Œå¹¶ä¸”æŠŠç›®æ ‡å‡å»åŠ å…¥çš„å…ƒç´ ï¼Œç„¶åæŠŠå‰©ä¸‹å…ƒç´ ï¼ˆåŒ…æ‹¬å½“å‰åŠ å…¥çš„å…ƒç´ ï¼‰
+		æ”¾åˆ°ä¸‹ä¸€å±‚é€’å½’ä¸­è§£å†³å­é—®é¢˜ã€‚ç®—æ³•å¤æ‚åº¦å› ä¸ºæ˜¯NPé—®é¢˜ï¼Œæ‰€ä»¥è‡ªç„¶æ˜¯æŒ‡æ•°é‡çº§çš„ã€‚
 
  */
 public class CombinationSum {
@@ -51,12 +51,12 @@ public class CombinationSum {
 	}
 
 	/**
-	 * µİ¹é»ñÈ¡ÅÅĞòÊı×éÖĞµÄºóĞøÖµ
-	 * @param candidates ºòÑ¡Êı×é£¨¹Ì¶¨²»±ä£©
-	 * @param start ¿ªÊ¼¼ìË÷µÄÎ»ÖÃ
-	 * @param target Ä¿±êÖµ
-	 * @param item µ±Ç°µÄÊıÖµÊı×é
-	 * @param res ½á¹û¼¯
+	 * é€’å½’è·å–æ’åºæ•°ç»„ä¸­çš„åç»­å€¼
+	 * @param candidates å€™é€‰æ•°ç»„ï¼ˆå›ºå®šä¸å˜ï¼‰
+	 * @param start å¼€å§‹æ£€ç´¢çš„ä½ç½®
+	 * @param target ç›®æ ‡å€¼
+	 * @param item å½“å‰çš„æ•°å€¼æ•°ç»„
+	 * @param res ç»“æœé›†
 	 */
 	private void helper(int[] candidates, int start, int target,
 			ArrayList<Integer> item, ArrayList<ArrayList<Integer>> res) {

@@ -19,7 +19,7 @@ public class SubstringwithConcatenationofAllWords {
 		int len = strArray.length;
 		if (len == 0)  return list;
 		
-		//记录数组中每个单词的个数
+		// TODO
 		int wordLen = strArray[0].length();
 		Map<String, Integer> wordsMap = new HashMap<String, Integer>();
 		for (int i = 0; i < len; i++) {
@@ -50,7 +50,7 @@ public class SubstringwithConcatenationofAllWords {
 					break;
 				}
 				numMap.put(tempStr, num);
-			}
+			} 
 			if (j == len) {
 				list.add(i);
 			}

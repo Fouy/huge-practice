@@ -3,19 +3,19 @@ package com.way361.leetcode.trappingrainwater;
  * LeetCode | Trapping Rain Water
  * @author xuefeihu
  * 
- * ÌâÄ¿£º
+ * é¢˜ç›®ï¼š
      Given n non-negative integers representing an elevation map where the 
    width of each bar is 1, compute how much water it is able to trap after raining.
 	 For example, Given [0,1,0,2,1,0,1,3,2,1,2,1], return 6.
 	| 
     |
-	|   (½«Êı×éÖĞµÄÖµ×ª»¯³ÉÖ±·½Í¼£¬Ëã¿ÉÒÔ·ÅµÄË®Á¿)
+	|   (å°†æ•°ç»„ä¸­çš„å€¼è½¬åŒ–æˆç›´æ–¹å›¾ï¼Œç®—å¯ä»¥æ”¾çš„æ°´é‡)
 	|--|--|--|--|--|--|--|--|--|--|----------------------------
       The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this 
    case, 6 units of rain water (blue section) are being trapped.Thanks Marcos for contributing this image!
-   Ë¼Â·:
-         ÔÚÔ­ÏÈÊı×éµÄ»ù´¡ÉÏ£¬´´½¨Á½¸öÊı×é   leftMostHeight[] (iÎ»ÖÃ×ó±ßµÄ×î´óÖµ) ¡¢rightMostHeight[] (iÎ»ÖÃÓÒ±ßµÄ×î´óÖµ)¡£
-   Ö®ºó±éÀúÔ­ÏÈÊı×é£¬»ñÈ¡iÎ»ÖÃ×ó²à×î´óºÍÓÒ²à×î´óµÄ×îĞ¡Öµmin, Ö®ºóÓÃ×îĞ¡Öµ¼õÈ¥rains[i]£¬×îºóÈ¡´óÓÚ0µÄÏà¼Ó¼´¿É¡£
+   æ€è·¯:
+         åœ¨åŸå…ˆæ•°ç»„çš„åŸºç¡€ä¸Šï¼Œåˆ›å»ºä¸¤ä¸ªæ•°ç»„   leftMostHeight[] (iä½ç½®å·¦è¾¹çš„æœ€å¤§å€¼) ã€rightMostHeight[] (iä½ç½®å³è¾¹çš„æœ€å¤§å€¼)ã€‚
+   ä¹‹åéå†åŸå…ˆæ•°ç»„ï¼Œè·å–iä½ç½®å·¦ä¾§æœ€å¤§å’Œå³ä¾§æœ€å¤§çš„æœ€å°å€¼min, ä¹‹åç”¨æœ€å°å€¼å‡å»rains[i]ï¼Œæœ€åå–å¤§äº0çš„ç›¸åŠ å³å¯ã€‚
  */
 public class TrappingRainWater {
 
@@ -26,8 +26,8 @@ public class TrappingRainWater {
 	}
 	
 	/**
-	 * ¼ÆÁ¿rainsµÄÈİÁ¿
-	 * @param rains Êı×é
+	 * è®¡é‡rainsçš„å®¹é‡
+	 * @param rains æ•°ç»„
 	 * @return
 	 */
 	public static int trap(int[] rains) {
@@ -35,7 +35,7 @@ public class TrappingRainWater {
         if(rains == null) return 0;
         int n = rains.length;
         
-        //»ñÈ¡¸÷¸öµãµÄ×ó±ßµÄ×î¸ßµã
+        //è·å–å„ä¸ªç‚¹çš„å·¦è¾¹çš„æœ€é«˜ç‚¹
 		int maxheight = 0;
 		int[] leftMostHeight = new int[n];
 		for(int i = 0; i < n; i++) {
@@ -43,7 +43,7 @@ public class TrappingRainWater {
 			maxheight = maxheight > rains[i] ? maxheight : rains[i];
 		}
 
-		//»ñÈ¡¸÷¸öµãÓÒ±ßµÄ×î¸ßµã
+		//è·å–å„ä¸ªç‚¹å³è¾¹çš„æœ€é«˜ç‚¹
 		maxheight = 0;
 		int[] rightMostHeight = new int[n];
 		for(int i = n-1; i >= 0; i--) {
@@ -51,7 +51,7 @@ public class TrappingRainWater {
 			maxheight = maxheight > rains[i] ? maxheight : rains[i];
 		}
 
-		//»ñÈ¡¸÷¸öµãµÄÈİÁ¿
+		//è·å–å„ä¸ªç‚¹çš„å®¹é‡
 		int water = 0;
 		for(int i = 0; i < n; i++) {
 			int min = leftMostHeight[i] > rightMostHeight[i] ? rightMostHeight[i] : leftMostHeight[i];

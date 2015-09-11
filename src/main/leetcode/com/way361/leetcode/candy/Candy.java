@@ -3,17 +3,17 @@ package com.way361.leetcode.candy;
  * LeetCode | Candy
  * @author xuefeihu
  * 
- * ÌâÄ¿£º
+ * é¢˜ç›®ï¼š
  * 	  There are N children standing in a line. Each child is assigned a rating value.
 	You are giving candies to these children subjected to the following requirements:
 	Each child must have at least one candy.
 	Children with a higher rating get more candies than their neighbors.
 	What is the minimum candies you must give?
- *	Ìâ½â£º
- *		step1:ÏÈ¸øÃ¿¸öÈË1¿écandy
- *		step2:´Ó×óÍùÓÒ±éÀú,Óöµ½µİÔöµÄÊıÖµcandyÖµ £«1
- *		step3:´ÓÓÒÍù×ó±éÀú,Óöµ½µİÔöµÄÊıÖµcandyÖÁ +1£¨·½ÏòÎª´ÓÓÒÍù×óµÄµİÔö£©
- *		step4:È¡Á½´Î¶ÔÓ¦Î»ÖÃµÄcandy×î´óÖµ
+ *	é¢˜è§£ï¼š
+ *		step1:å…ˆç»™æ¯ä¸ªäºº1å—candy
+ *		step2:ä»å·¦å¾€å³éå†,é‡åˆ°é€’å¢çš„æ•°å€¼candyå€¼ ï¼‹1
+ *		step3:ä»å³å¾€å·¦éå†,é‡åˆ°é€’å¢çš„æ•°å€¼candyè‡³ +1ï¼ˆæ–¹å‘ä¸ºä»å³å¾€å·¦çš„é€’å¢ï¼‰
+ *		step4:å–ä¸¤æ¬¡å¯¹åº”ä½ç½®çš„candyæœ€å¤§å€¼
  */
 public class Candy {
 
@@ -24,7 +24,7 @@ public class Candy {
 	}
 
 	/**
-	 * ·ÖÅäÌÇ¹û
+	 * åˆ†é…ç³–æœ
 	 * @param ratings 
 	 * @return
 	 */
@@ -37,12 +37,12 @@ public class Candy {
 		
 		for (int i = 0; i < res.length; i++)
 			res[i] = 1;
-		//´Ó×óÍùÓÒÓöµ½µİÔöµÄ  +1
+		//ä»å·¦å¾€å³é‡åˆ°é€’å¢çš„  +1
 		for (int i = 1; i < ratings.length; i++) {
 			if (ratings[i - 1] < ratings[i])
 				res[i] = res[i - 1] + 1;
 		}
-		//´ÓÓÒÍù×óÓöµ½µİÔöµÄ   +1  ²¢È¡ÉÏÒ»´Î½á¹ûÖĞÁ½ÕßµÄ×î´óÖµ
+		//ä»å³å¾€å·¦é‡åˆ°é€’å¢çš„   +1  å¹¶å–ä¸Šä¸€æ¬¡ç»“æœä¸­ä¸¤è€…çš„æœ€å¤§å€¼
 		for (int i = ratings.length - 2; i >= 0; i--) {
 			if (ratings[i + 1] < ratings[i]) {
 				tmp = res[i + 1] + 1;
@@ -50,7 +50,7 @@ public class Candy {
 					res[i] = tmp;
 			}
 		}
-		//ÇóºÍ
+		//æ±‚å’Œ
 		int result = 0;
 		for (int i = 0; i < res.length; i++) {
 			result += res[i];

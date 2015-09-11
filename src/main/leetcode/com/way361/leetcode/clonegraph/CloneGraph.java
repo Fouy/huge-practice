@@ -9,7 +9,7 @@ import java.util.Map;
  *  LeetCode | Clone Graph
  * @author xuefeihu
  * 
- * ÌâÄ¿£º
+ * é¢˜ç›®ï¼š
 	Clone an undirected graph. Each node in the graph contains a label and a list of its neighbors.
 	
 	OJ's undirected graph serialization:
@@ -31,10 +31,10 @@ import java.util.Map;
 	    0 --- 2
 	         / \
 	         \_/
- * Ìâ½â£º
-	ÕâµÀÌâ¿¼²ì¶ÔÍ¼µÄ±éÀúºÍÀûÓÃHashMap¿½±´µÄ·½·¨¡£
-	¶ÔÍ¼µÄ±éÀú¾ÍÊÇÁ½¸ö¾­µäµÄ·½·¨DFSºÍBFS¡£BFS¾­³£ÓÃQueueÊµÏÖ£¬DFS¾­³£ÓÃµİ¹éÊµÏÖ£¨¿É¸ÄÎªÕ»ÊµÏÖ£©¡£
-	¿½±´·½·¨ÊÇÓÃÓÃHashMap£¬key´æÔ­Ê¼Öµ£¬value´æcopyµÄÖµ£¬ÓÃDFS,BFS·½·¨±éÀú°ïÖú¿½±´neighborsµÄÖµ¡£
+ * é¢˜è§£ï¼š
+	è¿™é“é¢˜è€ƒå¯Ÿå¯¹å›¾çš„éå†å’Œåˆ©ç”¨HashMapæ‹·è´çš„æ–¹æ³•ã€‚
+	å¯¹å›¾çš„éå†å°±æ˜¯ä¸¤ä¸ªç»å…¸çš„æ–¹æ³•DFSå’ŒBFSã€‚BFSç»å¸¸ç”¨Queueå®ç°ï¼ŒDFSç»å¸¸ç”¨é€’å½’å®ç°ï¼ˆå¯æ”¹ä¸ºæ ˆå®ç°ï¼‰ã€‚
+	æ‹·è´æ–¹æ³•æ˜¯ç”¨ç”¨HashMapï¼Œkeyå­˜åŸå§‹å€¼ï¼Œvalueå­˜copyçš„å€¼ï¼Œç”¨DFS,BFSæ–¹æ³•éå†å¸®åŠ©æ‹·è´neighborsçš„å€¼ã€‚
  *
  */
 public class CloneGraph {
@@ -46,9 +46,9 @@ public class CloneGraph {
 	}
 
 	/**
-	 * ¿ËÂ¡ÎŞÏòÍ¼
-	 * ·½·¨1£º BFS,¾ÍÊÇÏÈ½«Í·½ÚµãÈëqueue£¬Ã¿Ò»´Îqueue³öÁĞÒ»¸önode£¬È»ºó¼ì²éÕâ¸önodeµÄËùÓĞµÄneighbors£¬
-	 * Èç¹ûÃ»visited¹ı£¬¾ÍÈë¶Ó£¬²¢¸üĞÂneighbor¡£ È»ºó¸üĞÂĞÂµÄneighborÁĞ±í¡£
+	 * å…‹éš†æ— å‘å›¾
+	 * æ–¹æ³•1ï¼š BFS,å°±æ˜¯å…ˆå°†å¤´èŠ‚ç‚¹å…¥queueï¼Œæ¯ä¸€æ¬¡queueå‡ºåˆ—ä¸€ä¸ªnodeï¼Œç„¶åæ£€æŸ¥è¿™ä¸ªnodeçš„æ‰€æœ‰çš„neighborsï¼Œ
+	 * å¦‚æœæ²¡visitedè¿‡ï¼Œå°±å…¥é˜Ÿï¼Œå¹¶æ›´æ–°neighborã€‚ ç„¶åæ›´æ–°æ–°çš„neighboråˆ—è¡¨ã€‚
 	 * @param graphNode
 	 * @return
 	 */
@@ -82,8 +82,8 @@ public class CloneGraph {
 	}
 	
 	/**
-	 * ¿ËÂ¡ÎŞÏòÍ¼
-	 * ·½·¨2£ºDFSµÄµİ¹é²Ù×÷ÈçÏÂ£¬µü´ú¸´ÖÆneighbors
+	 * å…‹éš†æ— å‘å›¾
+	 * æ–¹æ³•2ï¼šDFSçš„é€’å½’æ“ä½œå¦‚ä¸‹ï¼Œè¿­ä»£å¤åˆ¶neighbors
 	 * @param graphNode
 	 * @return
 	 */
@@ -100,7 +100,7 @@ public class CloneGraph {
 	}
 	
 	/**
-	 * Éî¶ÈÓÅÏÈ±éÀú
+	 * æ·±åº¦ä¼˜å…ˆéå†
 	 * @param hm
 	 * @param graphNode
 	 */
@@ -120,8 +120,8 @@ public class CloneGraph {
 	}
 	
 	/**
-	 * ¿ËÂ¡ÎŞÏòÍ¼
-	 * ·½·¨3£ºDFSµÄ·Çµİ¹é·½·¨£¬ÖØµãÊÇ°ÑBFSÖĞµÄqueue»»³Éstack£¬ÒòÎª³öÁĞ·½·¨²»Ò»ÑùÁË£¬ËùÒÔ±éÀúµÄÏßÂ·¾Í²»Ò»ÑùÁË¡£
+	 * å…‹éš†æ— å‘å›¾
+	 * æ–¹æ³•3ï¼šDFSçš„éé€’å½’æ–¹æ³•ï¼Œé‡ç‚¹æ˜¯æŠŠBFSä¸­çš„queueæ¢æˆstackï¼Œå› ä¸ºå‡ºåˆ—æ–¹æ³•ä¸ä¸€æ ·äº†ï¼Œæ‰€ä»¥éå†çš„çº¿è·¯å°±ä¸ä¸€æ ·äº†ã€‚
 	 * @param graphNode
 	 * @return
 	 */
@@ -151,7 +151,7 @@ public class CloneGraph {
 	}
 	
 	/**
-	 * Éú³É³õÊ¼ÎŞÏòÍ¼
+	 * ç”Ÿæˆåˆå§‹æ— å‘å›¾
 	 * @return
 	 */
 	private static UndirectedGraphNode createGraphNode() {
@@ -168,7 +168,7 @@ public class CloneGraph {
 }
 
 /**
- * ÎŞÏòÍ¼½Úµã
+ * æ— å‘å›¾èŠ‚ç‚¹
  */
 class UndirectedGraphNode {
 	public int label;

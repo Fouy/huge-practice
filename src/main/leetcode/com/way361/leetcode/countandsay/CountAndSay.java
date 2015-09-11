@@ -2,7 +2,7 @@ package com.way361.leetcode.countandsay;
 /**
  * LeetCode | Count and Say
  * @author xuefeihu
- *	ÌâÄ¿£º
+ *	é¢˜ç›®ï¼š
 		The count-and-say sequence is the sequence of integers beginning as follows:
 	<pre>
 	1, 11, 21, 1211, 111221, ...
@@ -13,17 +13,17 @@ package com.way361.leetcode.countandsay;
 	Given an integer n, generate the nth sequence.
 	</pre>
 		Note: The sequence of integers will be represented as a string.<br>
-	Ë¼Â·£º
- 		½âÊÍÒ»ÏÂ¾ÍÊÇ£¬ÊäÈën£¬ÄÇÃ´ÎÒ¾Í´ò³öµÚnĞĞµÄ×Ö·û´®¡£
-		ÔõÃ´È·¶¨µÚnĞĞ×Ö·û´®ÄØ£¿ËûµÄÕâ¸öÊÇÓĞ¹æÂÉµÄ¡£
+	æ€è·¯ï¼š
+ 		è§£é‡Šä¸€ä¸‹å°±æ˜¯ï¼Œè¾“å…¥nï¼Œé‚£ä¹ˆæˆ‘å°±æ‰“å‡ºç¬¬nè¡Œçš„å­—ç¬¦ä¸²ã€‚
+		æ€ä¹ˆç¡®å®šç¬¬nè¡Œå­—ç¬¦ä¸²å‘¢ï¼Ÿä»–çš„è¿™ä¸ªæ˜¯æœ‰è§„å¾‹çš„ã€‚
 <pre>	
- 	n = 1Ê±£¬´òÓ¡Ò»¸ö1¡£
- 	n = 2Ê±£¬¿´n=1ÄÇÒ»ĞĞ£¬Äî£º1¸ö1£¬ËùÒÔ´òÓ¡£º11¡£
- 	n = 3Ê±£¬¿´n=2ÄÇÒ»ĞĞ£¬Äî£º2¸ö1£¬ËùÒÔ´òÓ¡£º21¡£
- 	n = 4Ê±£¬¿´n=3ÄÇÒ»ĞĞ£¬Äî£ºÒ»¸ö2Ò»¸ö1£¬ËùÒÔ´òÓ¡£º1211¡£
-	ÒÔ´ËÀàÍÆ¡£(×¢ÒâÕâÀïnÊÇ´Ó1¿ªÊ¼µÄ£©
+ 	n = 1æ—¶ï¼Œæ‰“å°ä¸€ä¸ª1ã€‚
+ 	n = 2æ—¶ï¼Œçœ‹n=1é‚£ä¸€è¡Œï¼Œå¿µï¼š1ä¸ª1ï¼Œæ‰€ä»¥æ‰“å°ï¼š11ã€‚
+ 	n = 3æ—¶ï¼Œçœ‹n=2é‚£ä¸€è¡Œï¼Œå¿µï¼š2ä¸ª1ï¼Œæ‰€ä»¥æ‰“å°ï¼š21ã€‚
+ 	n = 4æ—¶ï¼Œçœ‹n=3é‚£ä¸€è¡Œï¼Œå¿µï¼šä¸€ä¸ª2ä¸€ä¸ª1ï¼Œæ‰€ä»¥æ‰“å°ï¼š1211ã€‚
+	ä»¥æ­¤ç±»æ¨ã€‚(æ³¨æ„è¿™é‡Œnæ˜¯ä»1å¼€å§‹çš„ï¼‰
 </pre>
-		ËùÒÔ¹¹½¨µ±Ç°ĞĞµÄ×Ö·û´®ÒªÒÀ¾İÉÏÒ»ĞĞµÄ×Ö·û´®¡£¡°Ğ¡ÏİÚå¾ÍÊÇÅÜÍêÑ­»·Ö®ºó¼ÇµÃ°Ñ×îºóÒ»¸ö×Ö·ûÒ²¼ÓÉÏ£¬ÒòÎªÖ®Ç°Ö»ÊÇ¼ÆÊı¶øÒÑ¡£
+		æ‰€ä»¥æ„å»ºå½“å‰è¡Œçš„å­—ç¬¦ä¸²è¦ä¾æ®ä¸Šä¸€è¡Œçš„å­—ç¬¦ä¸²ã€‚â€œå°é™·é˜±å°±æ˜¯è·‘å®Œå¾ªç¯ä¹‹åè®°å¾—æŠŠæœ€åä¸€ä¸ªå­—ç¬¦ä¹ŸåŠ ä¸Šï¼Œå› ä¸ºä¹‹å‰åªæ˜¯è®¡æ•°è€Œå·²ã€‚
 	
  */
 public class CountAndSay {
@@ -36,7 +36,7 @@ public class CountAndSay {
 	}
 
 	/**
-	 * ·µ»ØµÚn´ÎµİÍÆ½á¹û
+	 * è¿”å›ç¬¬næ¬¡é€’æ¨ç»“æœ
 	 * @param n
 	 * @return
 	 */
@@ -44,13 +44,13 @@ public class CountAndSay {
 		if (n <= 0)
 			return "";
 		
-		String curRes = "1";//·µ»ØµÄ½á¹û´®
-		int start = 1;// ´Ó1¿ªÊ¼Ëã
-		while (start < n) {//µİÍÆ¹ı³Ì
+		String curRes = "1";//è¿”å›çš„ç»“æœä¸²
+		int start = 1;// ä»1å¼€å§‹ç®—
+		while (start < n) {//é€’æ¨è¿‡ç¨‹
 			StringBuilder res = new StringBuilder();
 			int count = 1;
-			for (int j = 1; j < curRes.length(); j++) {//Æ´½ÓÒ»´ÎµİÍÆ´®
-				if (curRes.charAt(j) == curRes.charAt(j - 1))//Í³¼ÆÖØ¸´×Ö·û
+			for (int j = 1; j < curRes.length(); j++) {//æ‹¼æ¥ä¸€æ¬¡é€’æ¨ä¸²
+				if (curRes.charAt(j) == curRes.charAt(j - 1))//ç»Ÿè®¡é‡å¤å­—ç¬¦
 					count++;
 				else {
 					res.append(count);
@@ -59,7 +59,7 @@ public class CountAndSay {
 				}
 			}
 			res.append(count);
-			res.append(curRes.charAt(curRes.length() - 1));//Æ´½Ó×îºóÒ»¸ö×Ö·û
+			res.append(curRes.charAt(curRes.length() - 1));//æ‹¼æ¥æœ€åä¸€ä¸ªå­—ç¬¦
 			curRes = res.toString();
 			start++;
 		}

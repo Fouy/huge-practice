@@ -19,7 +19,7 @@ public class SubstringwithConcatenationofAllWords2 {
 		int arrayLength = strArray.length;
 		if (arrayLength == 0) return list;
 		
-		//Í³¼ÆstrArrayÊı×éÖĞµ¥´ÊµÄ¸öÊı
+		//ç»Ÿè®¡strArrayæ•°ç»„ä¸­å•è¯çš„ä¸ªæ•°
 		int wordLength = strArray[0].length();
 		Map<String, Integer> wordsMap = new HashMap<String, Integer>();
 		for (int i = 0; i < arrayLength; i++) {
@@ -32,26 +32,26 @@ public class SubstringwithConcatenationofAllWords2 {
 		
 		int strLength = str.length();
 		int max = strLength - wordLength + 1;
-		for (int i = 0; i < wordLength; i++) {//½«°´»¬¶¯´°¿Ú·Ö¸îºÃµÄ×é½øĞĞÑ­»·
+		for (int i = 0; i < wordLength; i++) {//å°†æŒ‰æ»‘åŠ¨çª—å£åˆ†å‰²å¥½çš„ç»„è¿›è¡Œå¾ªç¯
 			Map<String, Integer> numMap = new HashMap<String, Integer>();
 			int count = 0;
 			int start = i;
-			for (int end = start; end < max; end += wordLength) {//±éÀúµ¥×éÖĞµÄÆ¥Åä´®£¨»ØËİËã·¨£©
+			for (int end = start; end < max; end += wordLength) {//éå†å•ç»„ä¸­çš„åŒ¹é…ä¸²ï¼ˆå›æº¯ç®—æ³•ï¼‰
 				String tempStr = str.substring(end, end + wordLength);
-				if (!wordsMap.containsKey(tempStr)) {//»ØËİºóÈôÏÂÒ»¸ö´®²»Æ¥ÅäÔòÌø¹ıµ±Ç°´®
+				if (!wordsMap.containsKey(tempStr)) {//å›æº¯åè‹¥ä¸‹ä¸€ä¸ªä¸²ä¸åŒ¹é…åˆ™è·³è¿‡å½“å‰ä¸²
 					numMap.clear();
 					count = 0;
 					start = end + wordLength;
 					continue;
 				}
 				int num = 1;
-				if (numMap.containsKey(tempStr)) {//Èô×éÄÚMAP°üº¬¸Ã´Ê£¬ÔòĞŞ¸Ä×éÄÚ¼ÆÊı
+				if (numMap.containsKey(tempStr)) {//è‹¥ç»„å†…MAPåŒ…å«è¯¥è¯ï¼Œåˆ™ä¿®æ”¹ç»„å†…è®¡æ•°
 					num += numMap.get(tempStr);
 				}
 				numMap.put(tempStr, num);
 				if (num <= wordsMap.get(tempStr)) {
 					count++;
-				} else {//Èç¹û¸Ã×éÖĞµÄ¼ÆÊı³¬¹ıµ¥´ÊÊı×éÖĞµÄ¼ÆÊı
+				} else {//å¦‚æœè¯¥ç»„ä¸­çš„è®¡æ•°è¶…è¿‡å•è¯æ•°ç»„ä¸­çš„è®¡æ•°
 					while (numMap.get(tempStr) > wordsMap.get(tempStr)) {
 						tempStr = str.substring(start, start + wordLength);
 						numMap.put(tempStr, numMap.get(tempStr) - 1);
