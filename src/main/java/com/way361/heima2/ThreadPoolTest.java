@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Ïß³Ì³Ø²âÊÔ£¬Ïß³Ì³ØÖ÷ÒªÓÃÀ´³ÌĞòÔËĞĞÊ±µÄÏß³ÌÊıÁ¿£¬ÕâÑù¿ÉÒÔ¼õÉÙÒòÏß³ÌµÄ·´¸´´´½¨¶øÔì³ÉµÄ×ÊÔ´ÀË·Ñ£¬¿ÉÒÔºÏÀíµÄµ÷ÕûÏß³ÌÊıÁ¿À´Ê¹¼ÆËã»ú µÄÓ²¼şµÃµ½ºÏÀíµÄÀûÓÃ¡£
+ * çº¿ç¨‹æ± æµ‹è¯•ï¼Œçº¿ç¨‹æ± ä¸»è¦ç”¨æ¥ç¨‹åºè¿è¡Œæ—¶çš„çº¿ç¨‹æ•°é‡ï¼Œè¿™æ ·å¯ä»¥å‡å°‘å› çº¿ç¨‹çš„åå¤åˆ›å»ºè€Œé€ æˆçš„èµ„æºæµªè´¹ï¼Œå¯ä»¥åˆç†çš„è°ƒæ•´çº¿ç¨‹æ•°é‡æ¥ä½¿è®¡ç®—æœº çš„ç¡¬ä»¶å¾—åˆ°åˆç†çš„åˆ©ç”¨ã€‚
  * 
  * @author xuefeihu
  *
@@ -13,9 +13,9 @@ import java.util.concurrent.TimeUnit;
 public class ThreadPoolTest {
 
 	public static void main(String[] args) {
-		// ExecutorService threadPool = Executors.newFixedThreadPool(3);//´´½¨¹Ì¶¨Ïß³Ì
-		// ExecutorService threadPool = Executors.newCachedThreadPool();//´´½¨»º´æÏß³Ì
-		ExecutorService threadPool = Executors.newSingleThreadExecutor();// ´´½¨µ¥Ò»Ïß³Ì
+		// ExecutorService threadPool = Executors.newFixedThreadPool(3);//åˆ›å»ºå›ºå®šçº¿ç¨‹
+		// ExecutorService threadPool = Executors.newCachedThreadPool();//åˆ›å»ºç¼“å­˜çº¿ç¨‹
+		ExecutorService threadPool = Executors.newSingleThreadExecutor();// åˆ›å»ºå•ä¸€çº¿ç¨‹
 		for (int i = 1; i <= 10; i++) {
 			final int task = i;
 			threadPool.execute(new Runnable() {
@@ -37,7 +37,7 @@ public class ThreadPoolTest {
 		System.out.println("all of 10 tasks have committed! ");
 		// threadPool.shutdownNow();
 
-		//´´½¨Ò»¸ö¶¨Ê±Æ÷Ïß³Ì³Ø
+		//åˆ›å»ºä¸€ä¸ªå®šæ—¶å™¨çº¿ç¨‹æ± 
 		Executors.newScheduledThreadPool(3).scheduleAtFixedRate(new Runnable() {
 			@Override
 			public void run() {

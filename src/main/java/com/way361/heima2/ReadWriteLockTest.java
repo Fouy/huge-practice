@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
- * ¶ÁĞ´Ëø
+ * è¯»å†™é”
  * @author xuefeihu
  *
  */
@@ -15,7 +15,7 @@ public class ReadWriteLockTest {
 		
 		final ReadWriteData data = new ReadWriteData();
 		
-		//ÆôÓÃÈı¸öÏß³Ì£¬ÊµÏÖ¶ÁĞ´Ëø£¨¶ÁÊ±¿ÉÒÔ¶Á£¬Ğ´Ê±²»¿É¶ÁÒ²²»¿ÉÒÔĞ´£©
+		//å¯ç”¨ä¸‰ä¸ªçº¿ç¨‹ï¼Œå®ç°è¯»å†™é”ï¼ˆè¯»æ—¶å¯ä»¥è¯»ï¼Œå†™æ—¶ä¸å¯è¯»ä¹Ÿä¸å¯ä»¥å†™ï¼‰
 		for (int i = 0; i < 3; i++) {
 			new Thread() {
 				public void run() {
@@ -37,21 +37,21 @@ public class ReadWriteLockTest {
 }
 
 /**
- * ¶ÁĞ´Êı¾İ
+ * è¯»å†™æ•°æ®
  * @author xuefeihu
  *
  */
 class ReadWriteData {
 	
-	private Object data = null;// ¹²ÏíÊı¾İ£¬Ö»ÄÜÓĞÒ»¸öÏß³ÌÄÜĞ´¸ÃÊı¾İ£¬µ«¿ÉÒÔÓĞ¶à¸öÏß³ÌÍ¬Ê±¶Á¸ÃÊı¾İ¡£
-	ReadWriteLock rwlock = new ReentrantReadWriteLock();//¶ÁĞ´Ëø
+	private Object data = null;// å…±äº«æ•°æ®ï¼Œåªèƒ½æœ‰ä¸€ä¸ªçº¿ç¨‹èƒ½å†™è¯¥æ•°æ®ï¼Œä½†å¯ä»¥æœ‰å¤šä¸ªçº¿ç¨‹åŒæ—¶è¯»è¯¥æ•°æ®ã€‚
+	ReadWriteLock rwlock = new ReentrantReadWriteLock();//è¯»å†™é”
 
 	/**
-	 * ¶Á²Ù×÷
+	 * è¯»æ“ä½œ
 	 */
 	public void get() {
 		
-		rwlock.readLock().lock();//¼Ó¶ÁËø
+		rwlock.readLock().lock();//åŠ è¯»é”
 		try {
 			System.out.println(Thread.currentThread().getName() + " be ready to read data!");
 			Thread.sleep((long) (Math.random() * 1000));
@@ -59,17 +59,17 @@ class ReadWriteData {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} finally {
-			rwlock.readLock().unlock();//È¥¶ÁËø
+			rwlock.readLock().unlock();//å»è¯»é”
 		}
 	}
 
 	/**
-	 * Ğ´²Ù×÷
+	 * å†™æ“ä½œ
 	 * @param data
 	 */
 	public void put(Object data) {
 
-		rwlock.writeLock().lock();//¼ÓĞ´Ëø
+		rwlock.writeLock().lock();//åŠ å†™é”
 		try {
 			System.out.println(Thread.currentThread().getName() + " be ready to write data!");
 			Thread.sleep((long) (Math.random() * 1000));
@@ -78,7 +78,7 @@ class ReadWriteData {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} finally {
-			rwlock.writeLock().unlock();//È¥Ğ´Ëø
+			rwlock.writeLock().unlock();//å»å†™é”
 		}
 	}
 }

@@ -34,6 +34,12 @@ public class MinimumWindowSubstring {
 		System.out.println(minWindow(S, T));
 	}
 
+	/**
+	 * 获取最小窗口
+	 * @param S 目标串
+	 * @param T 窗口
+	 * @return
+	 */
 	public static String minWindow(String S, String T) {
 		String result = null;
 		List<BarrelNode> list = prepareLists(T);

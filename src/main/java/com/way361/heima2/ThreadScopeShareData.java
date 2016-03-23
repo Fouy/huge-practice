@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * 线程范围内的共享数据
+ * 绾跨▼鑼冨洿鍐呯殑鍏变韩鏁版嵁
  * @author xuefeihu
  *
  */

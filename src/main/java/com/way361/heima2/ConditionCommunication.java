@@ -6,7 +6,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * ½ø³ÌÍ¨ĞÅ--Condition-----¡·ÓÉ´«Í³µÄ¸ÄÔì¶øÀ´{@link TraditionalThreadCommunication}
+ * è¿›ç¨‹é€šä¿¡--Condition-----ã€‹ç”±ä¼ ç»Ÿçš„æ”¹é€ è€Œæ¥{@link TraditionalThreadCommunication}
  * 
  * @author xuefeihu
  *
@@ -31,15 +31,15 @@ public class ConditionCommunication {
 	}
 
 	/**
-	 * ÒµÎñ´¦ÀíÀà£¨·Ö±ğ´òÓ¡Ö÷Ïß³ÌºÍ×ÓÏß³ÌµÄÒµÎñ£©
+	 * ä¸šåŠ¡å¤„ç†ç±»ï¼ˆåˆ†åˆ«æ‰“å°ä¸»çº¿ç¨‹å’Œå­çº¿ç¨‹çš„ä¸šåŠ¡ï¼‰
 	 * @author xuefeihu
 	 *
 	 */
 	static class Business {
 		
-		Lock lock = new ReentrantLock();//Ïß³ÌËø
+		Lock lock = new ReentrantLock();//çº¿ç¨‹é”
 		Condition condition = lock.newCondition();
-		private boolean bShouldSub = true;//ÊÇ·ñ¸Ã×ÓÏß³ÌÖ´ĞĞ
+		private boolean bShouldSub = true;//æ˜¯å¦è¯¥å­çº¿ç¨‹æ‰§è¡Œ
 
 		public void sub(int i) {
 			lock.lock();

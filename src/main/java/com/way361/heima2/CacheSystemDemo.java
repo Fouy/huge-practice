@@ -6,36 +6,36 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
- * ÃæÊÔÌâ--»º´æÏµÍ³
+ * é¢è¯•é¢˜--ç¼“å­˜ç³»ç»Ÿ
  * 
  * @author xuefeihu
  *
  */
 public class CacheSystemDemo {
 
-	private Map<String, Object> cache = new HashMap<String, Object>();//Êı¾İ»º´æ
+	private Map<String, Object> cache = new HashMap<String, Object>();//æ•°æ®ç¼“å­˜
 
 	public static void main(String[] args) {
 
 	}
 
-	private ReadWriteLock rwl = new ReentrantReadWriteLock();//¶ÁĞ´Ëø
+	private ReadWriteLock rwl = new ReentrantReadWriteLock();//è¯»å†™é”
 
-	//»ñÈ¡Êı¾İ£¬µ±¶àÏß³ÌÀ´»ñÈ¡»º´æÊı¾İÊ±£¬ĞèÒª¼ÓÉÏ¶ÁĞ´Ëø´Ó¶ø¿ÉÒÔÊ¹ËøÁ£¶È±äĞ¡£¬Ìá¸ßĞ§ÂÊ
+	//è·å–æ•°æ®ï¼Œå½“å¤šçº¿ç¨‹æ¥è·å–ç¼“å­˜æ•°æ®æ—¶ï¼Œéœ€è¦åŠ ä¸Šè¯»å†™é”ä»è€Œå¯ä»¥ä½¿é”ç²’åº¦å˜å°ï¼Œæé«˜æ•ˆç‡
 	public Object getData(String key) {
 		
-		rwl.readLock().lock();//¼Ó¶ÁËø
+		rwl.readLock().lock();//åŠ è¯»é”
 		Object value = null;
 		
 		try {
 			value = cache.get(key);
 			if (value == null) {
-				rwl.readLock().unlock();//È¥¶ÁËø
-				//¶ÁËøÈ¥³ıÖ®ºó£¬ÆäËûÏß³Ì¿ÉÄÜ¶ÔdataµÄÊıÖµ½øĞĞ¸ü¸Ä£¬ËùÒÔÏÂÃæĞèÒªÔÙ¶ÔÊı¾İ½øĞĞÅĞ¶Ï
-				rwl.writeLock().lock();//¼ÓĞ´Ëø
+				rwl.readLock().unlock();//å»è¯»é”
+				//è¯»é”å»é™¤ä¹‹åï¼Œå…¶ä»–çº¿ç¨‹å¯èƒ½å¯¹dataçš„æ•°å€¼è¿›è¡Œæ›´æ”¹ï¼Œæ‰€ä»¥ä¸‹é¢éœ€è¦å†å¯¹æ•°æ®è¿›è¡Œåˆ¤æ–­
+				rwl.writeLock().lock();//åŠ å†™é”
 				try {
 					if (value == null) {
-						value = "aaaa";// Êµ¼ÊÊ§È¥queryDB();
+						value = "aaaa";// å®é™…å¤±å»queryDB();
 					}
 				} finally {
 					rwl.writeLock().unlock();

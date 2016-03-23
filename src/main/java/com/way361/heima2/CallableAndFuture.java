@@ -10,14 +10,14 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 
 /**
- * callable Óë Future £¬callableÊÇÏß³ÌÖ´ĞĞµÄÈÎÎñ£¬²¢ÇÒ·µ»Ø½á¹û£¬FutrueÊÇ½ÓÊÕcallable·µ»ØµÄ½á¹û
+ * callable ä¸ Future ï¼Œcallableæ˜¯çº¿ç¨‹æ‰§è¡Œçš„ä»»åŠ¡ï¼Œå¹¶ä¸”è¿”å›ç»“æœï¼ŒFutrueæ˜¯æ¥æ”¶callableè¿”å›çš„ç»“æœ
  * @author xuefeihu
  *
  */
 public class CallableAndFuture {
 
 	public static void main(String[] args) {
-		//Ê¾ÀıÒ»£¬Ö±½ÓnewÏß³Ì£¬²¢Æô¶¯
+		//ç¤ºä¾‹ä¸€ï¼Œç›´æ¥newçº¿ç¨‹ï¼Œå¹¶å¯åŠ¨
 		Callable<Integer> callable = new Callable<Integer>() {
 			public Integer call() throws Exception {
 				return new Random().nextInt(100);
@@ -26,7 +26,7 @@ public class CallableAndFuture {
 		FutureTask<Integer> future = new FutureTask<Integer>(callable);
 		new Thread(future).start();
 		try {
-			Thread.sleep(5000);// ¿ÉÄÜ×öÒ»Ğ©ÊÂÇé
+			Thread.sleep(5000);// å¯èƒ½åšä¸€äº›äº‹æƒ…
 			System.out.println(future.get());
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -34,7 +34,7 @@ public class CallableAndFuture {
 			e.printStackTrace();
 		}
 		
-		//Ê¾Àı¶ş£¬ÓÃÏß³Ì³ØÌá½»Ò»¸öÈÎÎñ£¬µÈ´ıÈÎÎñÍê³É
+		//ç¤ºä¾‹äºŒï¼Œç”¨çº¿ç¨‹æ± æäº¤ä¸€ä¸ªä»»åŠ¡ï¼Œç­‰å¾…ä»»åŠ¡å®Œæˆ
 //		ExecutorService threadPool =  Executors.newSingleThreadExecutor();
 //		Future<String> future = threadPool.submit(
 //							new Callable<String>() {
@@ -44,14 +44,14 @@ public class CallableAndFuture {
 //								};
 //							}
 //					);
-//		System.out.println("µÈ´ı½á¹û");
+//		System.out.println("ç­‰å¾…ç»“æœ");
 //		try {
-//			System.out.println("ÄÃµ½½á¹û£º" + future.get());//µÈ´ı»Øµ÷Íê³ÉÈÎÎñ£¬Ïß³Ì×èÈû
+//			System.out.println("æ‹¿åˆ°ç»“æœï¼š" + future.get());//ç­‰å¾…å›è°ƒå®Œæˆä»»åŠ¡ï¼Œçº¿ç¨‹é˜»å¡
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
 		
-		//Ê¾ÀıÈı£¬ÓÃÏß³Ì³ØÌá½»ÅúÁ¿ÈÎÎñ£¬µÈ´ıÈÎÎñÖğ¸öÍê³É
+		//ç¤ºä¾‹ä¸‰ï¼Œç”¨çº¿ç¨‹æ± æäº¤æ‰¹é‡ä»»åŠ¡ï¼Œç­‰å¾…ä»»åŠ¡é€ä¸ªå®Œæˆ
 //		ExecutorService threadPool2 =  Executors.newFixedThreadPool(10);
 //		CompletionService<Integer> completionService = new ExecutorCompletionService<Integer>(threadPool2);
 //		for(int i=1;i<=10;i++){

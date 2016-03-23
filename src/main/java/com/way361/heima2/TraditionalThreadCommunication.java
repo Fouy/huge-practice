@@ -1,7 +1,7 @@
 package com.way361.heima2;
 
 /**
- * Ïß³ÌÍ¬²½»¥³âÊ¾Àı
+ * çº¿ç¨‹åŒæ­¥äº’æ–¥ç¤ºä¾‹
  * @author xuefeihu
  *
  */
@@ -25,12 +25,12 @@ public class TraditionalThreadCommunication {
 }
 
 /**
- * ÒµÎñ´¦ÀíÀà£¨·Ö±ğ´òÓ¡Ö÷Ïß³ÌºÍ×ÓÏß³ÌµÄÒµÎñ£©
+ * ä¸šåŠ¡å¤„ç†ç±»ï¼ˆåˆ†åˆ«æ‰“å°ä¸»çº¿ç¨‹å’Œå­çº¿ç¨‹çš„ä¸šåŠ¡ï¼‰
  * @author xuefeihu
  *
  */
 class Business {
-	private boolean bShouldSub = true;//ÊÇ·ñ¸Ã×ÓÏß³ÌÖ´ĞĞ
+	private boolean bShouldSub = true;//æ˜¯å¦è¯¥å­çº¿ç¨‹æ‰§è¡Œ
 
 	public synchronized void sub(int i) {
 		while (!bShouldSub) {

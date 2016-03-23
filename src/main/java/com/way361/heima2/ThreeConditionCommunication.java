@@ -5,7 +5,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * Ïß³ÌÍ¬²½Í¨ĞÅ-------Èı¸öÏß³ÌÍ¬²½Í¨ĞÅ£¨»½ĞÑÏß³ÌÒªÓĞË³Ğò£©
+ * çº¿ç¨‹åŒæ­¥é€šä¿¡-------ä¸‰ä¸ªçº¿ç¨‹åŒæ­¥é€šä¿¡ï¼ˆå”¤é†’çº¿ç¨‹è¦æœ‰é¡ºåºï¼‰
  * 
  * @author xuefeihu
  *
@@ -16,7 +16,7 @@ public class ThreeConditionCommunication {
 
 		final Business business = new Business();
 		
-		//¿ªÆôÏß³ÌÒ»
+		//å¼€å¯çº¿ç¨‹ä¸€
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -26,7 +26,7 @@ public class ThreeConditionCommunication {
 			}
 		}).start();
 
-		//¿ªÆôÏß³Ì¶ş
+		//å¼€å¯çº¿ç¨‹äºŒ
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -36,7 +36,7 @@ public class ThreeConditionCommunication {
 			}
 		}).start();
 
-		//¿ªÆôÏß³ÌÈı
+		//å¼€å¯çº¿ç¨‹ä¸‰
 		for (int i = 1; i <= 50; i++) {
 			business.main(i);
 		}
@@ -44,7 +44,7 @@ public class ThreeConditionCommunication {
 	}
 
 	static class Business {
-		Lock lock = new ReentrantLock();//Í¬²½Ëø
+		Lock lock = new ReentrantLock();//åŒæ­¥é”
 		Condition condition1 = lock.newCondition();
 		Condition condition2 = lock.newCondition();
 		Condition condition3 = lock.newCondition();
@@ -55,7 +55,7 @@ public class ThreeConditionCommunication {
 			try {
 				while (shouldSub != 2) {
 					try {
-						condition2.await();//Ê¹µ±Ç°Ïß³ÌµÈ´ı£¬²¢°ó¶¨µ½µ±Ç°³Ì³Ì
+						condition2.await();//ä½¿å½“å‰çº¿ç¨‹ç­‰å¾…ï¼Œå¹¶ç»‘å®šåˆ°å½“å‰ç¨‹ç¨‹
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -63,8 +63,8 @@ public class ThreeConditionCommunication {
 				for (int j = 1; j <= 10; j++) {
 					System.out.println("sub2 thread sequence of " + j + ",loop of " + i);
 				}
-				shouldSub = 3;//ÉèÖÃÏÂÒ»´ÎÖ´ĞĞµÄ·½·¨
-				condition3.signal();//»½ĞÑÖ®Ç°°ó¶¨µÄÏß³Ì
+				shouldSub = 3;//è®¾ç½®ä¸‹ä¸€æ¬¡æ‰§è¡Œçš„æ–¹æ³•
+				condition3.signal();//å”¤é†’ä¹‹å‰ç»‘å®šçš„çº¿ç¨‹
 			} finally {
 				lock.unlock();
 			}
@@ -75,7 +75,7 @@ public class ThreeConditionCommunication {
 			try {
 				while (shouldSub != 3) {
 					try {
-						condition3.await();//Ê¹µ±Ç°Ïß³ÌµÈ´ı£¬²¢°ó¶¨µ½µ±Ç°³Ì³Ì
+						condition3.await();//ä½¿å½“å‰çº¿ç¨‹ç­‰å¾…ï¼Œå¹¶ç»‘å®šåˆ°å½“å‰ç¨‹ç¨‹
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -83,8 +83,8 @@ public class ThreeConditionCommunication {
 				for (int j = 1; j <= 20; j++) {
 					System.out.println("sub3 thread sequence of " + j + ",loop of " + i);
 				}
-				shouldSub = 1;//ÉèÖÃÏÂÒ»´ÎÖ´ĞĞµÄ·½·¨
-				condition1.signal();//»½ĞÑÖ®Ç°°ó¶¨µÄÏß³Ì
+				shouldSub = 1;//è®¾ç½®ä¸‹ä¸€æ¬¡æ‰§è¡Œçš„æ–¹æ³•
+				condition1.signal();//å”¤é†’ä¹‹å‰ç»‘å®šçš„çº¿ç¨‹
 			} finally {
 				lock.unlock();
 			}
@@ -95,7 +95,7 @@ public class ThreeConditionCommunication {
 			try {
 				while (shouldSub != 1) {
 					try {
-						condition1.await();//Ê¹µ±Ç°Ïß³ÌµÈ´ı£¬²¢°ó¶¨µ½µ±Ç°³Ì³Ì
+						condition1.await();//ä½¿å½“å‰çº¿ç¨‹ç­‰å¾…ï¼Œå¹¶ç»‘å®šåˆ°å½“å‰ç¨‹ç¨‹
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -103,8 +103,8 @@ public class ThreeConditionCommunication {
 				for (int j = 1; j <= 100; j++) {
 					System.out.println("main thread sequence of " + j + ",loop of " + i);
 				}
-				shouldSub = 2;//ÉèÖÃÏÂÒ»´ÎÖ´ĞĞµÄ·½·¨
-				condition2.signal();//»½ĞÑÖ®Ç°°ó¶¨µÄÏß³Ì
+				shouldSub = 2;//è®¾ç½®ä¸‹ä¸€æ¬¡æ‰§è¡Œçš„æ–¹æ³•
+				condition2.signal();//å”¤é†’ä¹‹å‰ç»‘å®šçš„çº¿ç¨‹
 			} finally {
 				lock.unlock();
 			}

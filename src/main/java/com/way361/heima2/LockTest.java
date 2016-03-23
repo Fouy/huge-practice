@@ -4,7 +4,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * Ëø²âÊÔ
+ * é”æµ‹è¯•
  * @author xuefeihu
  *
  */
@@ -17,7 +17,7 @@ public class LockTest {
 	private void init() {
 		final Outputer outputer = new Outputer();
 		
-		//Ïß³ÌÒ»   ´òÓ¡×Ö·û´®"zhangxiaoxiang"
+		//çº¿ç¨‹ä¸€   æ‰“å°å­—ç¬¦ä¸²"zhangxiaoxiang"
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -32,7 +32,7 @@ public class LockTest {
 			}
 		}).start();
 
-		//Ïß³Ì¶ş   ´òÓ¡×Ö·û´®"lihuoming"
+		//çº¿ç¨‹äºŒ   æ‰“å°å­—ç¬¦ä¸²"lihuoming"
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -49,23 +49,23 @@ public class LockTest {
 	}
 
 	/**
-	 * Êä³öÆ÷
+	 * è¾“å‡ºå™¨
 	 * @author xuefeihu
 	 *
 	 */
 	static class Outputer {
-		Lock lock = new ReentrantLock();//Ëù¶ÔÏó
+		Lock lock = new ReentrantLock();//æ‰€å¯¹è±¡
 
 		public void output(String name) {
 			int len = name.length();
-			lock.lock();//¼ÓËø
+			lock.lock();//åŠ é”
 			try {
 				for (int i = 0; i < len; i++) {
 					System.out.print(name.charAt(i));
 				}
 				System.out.println();
 			} finally {
-				lock.unlock();//½âËø
+				lock.unlock();//è§£é”
 			}
 		}
 

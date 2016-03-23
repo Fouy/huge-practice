@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * ThreadLocal²âÊÔ
+ * ThreadLocalæµ‹è¯•
  * @author xuefeihu
  *
  */
@@ -28,15 +28,15 @@ public class ThreadLocalTest {
 					myThreadScopeData.set(myData);*/
 					MyThreadScopeData.getThreadInstance().setName("name" + data);
 					MyThreadScopeData.getThreadInstance().setAge(data);
-					new A().get();//ÔÚÄ£¿éAÖĞ»ñÈ¡Ïß³ÌÏà¹ØµÄÊı¾İ
-					new B().get();//ÔÚÄ£¿éBÖĞ»ñÈ¡Ïß³ÌÏà¹ØµÄÊı¾İ
+					new A().get();//åœ¨æ¨¡å—Aä¸­è·å–çº¿ç¨‹ç›¸å…³çš„æ•°æ®
+					new B().get();//åœ¨æ¨¡å—Bä¸­è·å–çº¿ç¨‹ç›¸å…³çš„æ•°æ®
 				}
 			}).start();
 		}
 	}
 	
 	/**
-	 * ³ÌĞòÄ£¿éA
+	 * ç¨‹åºæ¨¡å—A
 	 * @author xuefeihu
 	 *
 	 */
@@ -57,7 +57,7 @@ public class ThreadLocalTest {
 	}
 	
 	/**
-	 * ³ÌĞòÄ£¿éB
+	 * ç¨‹åºæ¨¡å—B
 	 * @author xuefeihu
 	 *
 	 */
@@ -75,7 +75,7 @@ public class ThreadLocalTest {
 }
 
 /**
- * Ïß³ÌÏà¹ØµÄÊı¾İ£¨µ¥ÀıÄ£Ê½£©
+ * çº¿ç¨‹ç›¸å…³çš„æ•°æ®ï¼ˆå•ä¾‹æ¨¡å¼ï¼‰
  * @author xuefeihu
  *
  */
